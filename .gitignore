@@ -1,0 +1,23 @@
+# NetBeans and Ant
+build/
+dist/
+nbproject/private/
+nbproject/build-impl.xml
+
+# Compiled classes and archives
+*.class
+*.war
+*.ear
+
+# Logs
+*.log
+catallina.out
+
+# IDE Specific
+.netbeans/
+.idea/
+.vscode/
+
+# OS Specific
+Thumbs.db
+.DS_Store
