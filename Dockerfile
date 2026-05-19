@@ -1,5 +1,6 @@
 # Build the Ant-based NetBeans web application and package it as a WAR
-FROM openjdk:11-jdk-slim AS builder
+# Use a widely-available Temurin Java 11 image (more reliably available on registries)
+FROM eclipse-temurin:11-jdk AS builder
 WORKDIR /app
 
 RUN apt-get update && apt-get install -y --no-install-recommends ant curl unzip && rm -rf /var/lib/apt/lists/*
