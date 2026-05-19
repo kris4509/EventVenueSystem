@@ -7,11 +7,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends ant curl unzip 
 
 COPY . .
 
-RUN mkdir -p /tmp/mysql && \
-    curl -L -o /tmp/mysql/mysql-connector-java-8.1.0.zip https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.1.0/mysql-connector-java-8.1.0.zip && \
-    unzip /tmp/mysql/mysql-connector-java-8.1.0.zip -d /tmp/mysql && \
-    mkdir -p web/WEB-INF/lib && \
-    cp /tmp/mysql/mysql-connector-java-8.1.0/mysql-connector-java-8.1.0.jar web/WEB-INF/lib/
+RUN mkdir -p web/WEB-INF/lib && \
+    curl -L -o web/WEB-INF/lib/mysql-connector-java-8.0.33.jar https://repo1.maven.org/maven2/mysql/mysql-connector-java/8.0.33/mysql-connector-java-8.0.33.jar
 
 RUN ant -f build.xml clean
 RUN ant -f build.xml
